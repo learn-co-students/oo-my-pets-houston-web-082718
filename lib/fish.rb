@@ -1,3 +1,4 @@
-class Fish
-  # code goes here
+require_relative "./animal.rb"
+
+class Fish < Animal
 end
