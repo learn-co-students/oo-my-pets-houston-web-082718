@@ -72,16 +72,11 @@ class Owner
   end
 
   def sell_pets
-    self.pets[:dogs].each do |dog|
-      dog.mood = "nervous"
-    end
 
-    self.pets[:cats].each do |cat|
-      cat.mood = "nervous"
-    end
-
-    self.pets[:fishes].each do |fish|
-      fish.mood = "nervous"
+    pets.each do |pet, type|
+      type.each do |animal|
+        animal.mood = 'nervous'
+      end
     end
 
     @pets = {:fishes => [], :dogs => [], :cats => []}
@@ -94,6 +89,6 @@ end
 # graham.buy_dog("floofers")
 # graham.buy_dog("puddles")
 #
-# graham.walk_dogs
+# graham.sell_pets
 #
 # binding.pry
